@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="box">
 		<div class="container">
-			<h2>게시판 글 수정 페이지</h2>
+			<h2 style="font-size: 300%; font-family: 'Nanum Pen Script'">게시글 수정하기</h2>
 			<form action="wfboard_update.fboard" method="post">
 				<input type="hidden" name="fno" value="${vo.fno }"> <input
 					type="hidden" name="food" value="양식">

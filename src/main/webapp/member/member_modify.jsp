@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="box">
 			<div align="center">
-				<h2>회원정보 수정</h2>
+				<h2 style="font-size: 300%; font-family: 'Nanum Pen Script'">회원정보 수정하기</h2>
 				<b>${sessionScope.member_name }님의 회원정보를 수정합니다.</b>
 				<hr>
 				<form role="form" action="member_update.member" method="post">
