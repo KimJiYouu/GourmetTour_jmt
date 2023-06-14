@@ -84,6 +84,7 @@ public class FoodController extends HttpServlet {
 			// 상세 화면
 		} else if (command.equals("/cfboard/cfboard_content.fboard")) {
 			// getContent : fno
+			service.hitCount(request, response);
 			FoodVO vo = service.getContent(request, response);
 			request.setAttribute("vo", vo);
 			request.getRequestDispatcher("cfboard_content.jsp").forward(request, response);
@@ -177,6 +178,7 @@ public class FoodController extends HttpServlet {
 		// 상세 화면
 		else if (command.equals("/kfboard/kfboard_content.fboard")) {
 		    // getContent : fno
+			service.hitCount(request, response);
 		    FoodVO vo = service.getContent(request, response);
 		    request.setAttribute("vo", vo);
 		    request.getRequestDispatcher("kfboard_content.jsp").forward(request, response);
@@ -225,9 +227,6 @@ public class FoodController extends HttpServlet {
 		}
 
 		
-		
-		
-
 //////////////////////////////////////////////양식///////////////////////////////////////////////////////////////////
 		 // 글쓰기 화면에 처리 
 		if (command.equals("/wfboard/wfboard_write.fboard")) {
@@ -260,6 +259,7 @@ public class FoodController extends HttpServlet {
 		 
 		 // 상세 화면 
 		 } else if (command.equals("/wfboard/wfboard_content.fboard")) { //getContent : fno 
+			 service.hitCount(request, response);
 		FoodVO vo = service.getContent(request, response);
 		 request.setAttribute("vo", vo);
 		 request.getRequestDispatcher("wfboard_content.jsp").forward(request,response);
@@ -348,6 +348,7 @@ public class FoodController extends HttpServlet {
 
 			// 상세 화면
 		} else if (command.equals("/jfboard/jfboard_content.fboard")) { // getContent : fno
+			service.hitCount(request, response);
 			FoodVO vo = service.getContent(request, response);
 			request.setAttribute("vo", vo);
 			request.getRequestDispatcher("jfboard_content.jsp").forward(request, response);

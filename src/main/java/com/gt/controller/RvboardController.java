@@ -83,6 +83,7 @@ public class RvboardController extends HttpServlet {
 			// 상세 화면
 		} else if (command.equals("/rvboard/rvboard_content.rvboard")) {
 			// getContent : bno
+			service.hitCount(request, response);
 			request.setAttribute("bno", request.getParameter("bno"));
 			RvboardVO vo = service.getContent(request, response);
 			List<CommentsVO> clist = service.getComList(request, response);
@@ -169,15 +170,6 @@ public class RvboardController extends HttpServlet {
 		}
 		
 
-		//조회수 증가
-		else if(command.equals("/rvboard/rvboard_hitCount.rvboard")) {
 
-			service.hitCount(request, response);
-
-			String bno = request.getParameter("bno");
-
-			response.sendRedirect("rvboard_content.rvboard?bno=" + bno );
-
-		}
 	}
 }

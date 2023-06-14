@@ -66,7 +66,7 @@ public class CommentsDAO {
 			public List<CommentsVO> getComList(String bno) {
 				List<CommentsVO> list = new ArrayList<>();
 				
-				String sql = "SELECT * FROM COMMENTS WHERE BNO = ? ORDER BY REGDATE DESC ";
+				String sql = "SELECT * FROM COMMENTS WHERE BNO = ? ORDER BY REGDATE";
 				
 				Connection conn = null;
 				PreparedStatement pstmt = null;
