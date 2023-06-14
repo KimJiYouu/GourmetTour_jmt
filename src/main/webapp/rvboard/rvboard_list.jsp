@@ -24,7 +24,7 @@
 						<tr>
 							<td>${fn:length(list) - x.index}</td>
 							<td style="width: 17%">${vo.id }</td>
-							<td style="width: 50%"><a href="rvboard_content.rvboard?bno=${vo.bno }" onclick="location.href='rvboard_hitCount.rvboard?bno=${vo.bno}'">${vo.title }</a></td>
+							<td style="width: 50%"><a href="rvboard_content.rvboard?bno=${vo.bno }" onclick="location.href='rvboard_hitCount.rvboard?bno=${vo.bno}'">${vo.title } </a></td>
 							<td><fmt:formatDate value="${vo.regdate }"
 									pattern="yyyy-MM-dd (E) hh시mm분" /></td>
 							<td>${vo.hit }</td>

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <%@ include file="../include/header.jsp"%>
 <div class="container">
@@ -71,7 +72,7 @@
 				<table class="table" style="width: 95%">
 
 					<tr>
-						<th style="width: 7%">댓글</th>
+						<th style="width: 7%">댓글(${fn:length(clist)})</th>
 						<td><textarea rows="3" style="width: 140%;" name="comment"></textarea></td>
 
 						<td align="right"><input type="submit" value="댓글등록"

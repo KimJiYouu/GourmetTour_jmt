@@ -92,6 +92,23 @@ public class FoodServiceImpl implements FoodService{
 			return list;
 		}
 	}
+	public List<FoodVO> getSearch2List(HttpServletRequest request, HttpServletResponse response) {
+		String food = (String) request.getAttribute("food");
+		List<FoodVO> list = new ArrayList<>(); 
+		String search = request.getParameter("search");
+		System.out.println(search);
+		FoodDAO dao = FoodDAO.getInstance();
+		if(!search.equals("")) {
+			for(FoodVO v : dao.getList(food)) {
+				if(v.getWriting().contains(search)) {
+					list.add(v);
+				}
+			}
+			return list;
+		} else {
+			return list;
+		}
+	}
 
 	@Override
 	public void hitCount(HttpServletRequest request, HttpServletResponse response) {

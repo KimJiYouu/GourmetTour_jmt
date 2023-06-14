@@ -316,6 +316,13 @@ public class FoodController extends HttpServlet {
 			request.setAttribute("list", list);
 			request.getRequestDispatcher("jfboard_search.jsp").forward(request, response);
 		}
+		else if (command.equals("/jfboard/jfboard_search2.fboard")) {
+			request.setAttribute("food", request.getParameter("food"));
+			request.setAttribute("search", request.getParameter("search"));
+			List<FoodVO> list = service.getSearch2List(request, response);
+			request.setAttribute("list", list);
+			request.getRequestDispatcher("jfboard_search.jsp").forward(request, response);
+		}
 
 		// 조회수 증가
 		else if (command.equals("/jfboard/jfboard_hitCount.fboard")) {

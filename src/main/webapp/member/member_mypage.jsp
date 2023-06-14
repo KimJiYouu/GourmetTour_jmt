@@ -3,6 +3,7 @@
 <%@ include file="../include/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <section>
    <div class="container">
       <div class="box">
@@ -47,7 +48,7 @@
       </div>
 
       <div class="box">
-         <h2 style="font-size: 300%; font-family: 'Nanum Pen Script'">내가 작성한 글</h2>
+         <h2 style="font-size: 300%; font-family: 'Nanum Pen Script'">내가 작성한 글 (${fn:length(list)})</h2>
          <table class="table table-hover" style="width: 95%">
             <thead>
                <tr>
@@ -79,7 +80,7 @@
 
 
       <div class="box">
-         <h2 style="font-size: 300%; font-family: 'Nanum Pen Script'">내가 작성한 JMT</h2>
+         <h2 style="font-size: 300%; font-family: 'Nanum Pen Script'">내가 작성한 JMT (${fn:length(list2)})</h2>
          <table class="table table-hover" style="width: 95%">
             <thead>
                <tr>

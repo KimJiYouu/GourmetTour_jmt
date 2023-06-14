@@ -62,7 +62,6 @@ public class RvboardController extends HttpServlet {
 				// 목록을 가지고 나옴
 				List<RvboardVO> list = service.getList(request, response);
 				request.setAttribute("list", list);
-
 				request.getRequestDispatcher("rvboard_list.jsp").forward(request, response);
 
 			// 등록 작업

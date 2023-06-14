@@ -73,7 +73,7 @@
 									</c:when>
 									<c:otherwise>
 										<button type="button" class="btn btn-default"
-											onclick="location.href='jfboard_list.jboard?food=일식'">목록</button>
+											onclick="location.href='jfboard_list.fboard?food=일식'">목록</button>
 									</c:otherwise>
 								</c:choose>
 							</div>
