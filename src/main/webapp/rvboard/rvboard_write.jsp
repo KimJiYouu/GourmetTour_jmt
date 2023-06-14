@@ -6,7 +6,7 @@
 <div class="container">
 	<div class="box">
 		<div class="container">
-			<h2>게시판 글 작성 페이지</h2>
+			<h2 style="font-size: 300%; font-family: 'Nanum Pen Script'">게시글 쓰기</h2>
 			<form action="registForm.rvboard" method="post">
 			<table class="table" style="width: 95%">
 				

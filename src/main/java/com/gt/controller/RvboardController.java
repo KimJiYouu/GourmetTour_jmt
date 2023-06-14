@@ -58,7 +58,6 @@ public class RvboardController extends HttpServlet {
 			// 목록 화면에 처리
 		} else if (command.equals("/rvboard/rvboard_list.rvboard")) {
 
-//			if (session.getAttribute("member_id") != null) {
 
 				// 목록을 가지고 나옴
 				List<RvboardVO> list = service.getList(request, response);
