@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.gt.comments.model.CommentsVO;
-import com.gt.food.model.FoodVO;
 import com.gt.rvboard.model.RvboardVO;
 import com.gt.rvboard.service.RvboardService;
 import com.gt.rvboard.service.RvboardServiceImpl;
@@ -67,6 +66,10 @@ public class RvboardController extends HttpServlet {
 
 			// 등록 작업
 		} else if (command.equals("/rvboard/registForm.rvboard")) {
+			
+			if(request.getParameter("title").equals("") || request.getParameter("writing").equals("")) {
+				response.sendRedirect("rvboard_write.rvboard");
+			} else {
 
 			service.regist(request, response);
 			response.setContentType("text/html; charset=utf-8;");
@@ -75,6 +78,7 @@ public class RvboardController extends HttpServlet {
 			out.println("alert('글이 등록되었습니다.')");
 			out.println("location.href='rvboard_list.rvboard';");
 			out.println("</script>");
+			}
 
 			// 상세 화면
 		} else if (command.equals("/rvboard/rvboard_content.rvboard")) {
@@ -135,16 +139,24 @@ public class RvboardController extends HttpServlet {
 
 		// 댓글기능
 		else if (command.equals("/rvboard/comment.rvboard")) {
-
-			service.comregist(request, response);
-			// 목록에 추가하는 기능으로..?
-			List<CommentsVO> clist = service.getComList(request, response);
-			request.setAttribute("clist", clist);
-			RvboardVO vo = service.getContent(request, response);
-			request.setAttribute("vo", vo);
-			request.getRequestDispatcher("rvboard_content.jsp").forward(request, response);
-			// 상세페이지로 이동
-
+			if(!request.getParameter("comment").equals("")) {
+				
+				service.comregist(request, response);
+				List<CommentsVO> clist = service.getComList(request, response);
+				request.setAttribute("clist", clist);
+				RvboardVO vo = service.getContent(request, response);
+				request.setAttribute("vo", vo);
+				request.getRequestDispatcher("rvboard_content.jsp").forward(request, response);
+				// 목록에 추가하는 기능으로..?
+				// 상세페이지로 이동
+			} else {
+				List<CommentsVO> clist = service.getComList(request, response);
+				request.setAttribute("clist", clist);
+				RvboardVO vo = service.getContent(request, response);
+				request.setAttribute("vo", vo);
+				request.getRequestDispatcher("rvboard_content.jsp").forward(request, response);
+				
+			}
 		}
 
 		// 댓글삭제

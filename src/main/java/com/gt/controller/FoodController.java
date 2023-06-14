@@ -66,10 +66,20 @@ public class FoodController extends HttpServlet {
 
 			// 등록 작업
 		} else if (command.equals("/cfboard/registForm.fboard")) {
-			request.setAttribute("food", request.getParameter("food"));
-			service.regist(request, response);
-
-			request.getRequestDispatcher("cfboard_list.fboard").forward(request, response);
+			
+			if(request.getParameter("title").equals("") 
+					|| request.getParameter("open").equals("") 
+					|| request.getParameter("address").equals("") 
+					|| request.getParameter("writing").equals("")) {
+				response.sendRedirect("cfboard_write.fboard");
+			} else {
+				
+				
+				request.setAttribute("food", request.getParameter("food"));
+				service.regist(request, response);
+				request.getRequestDispatcher("cfboard_list.fboard").forward(request, response);
+			}
+			
 
 			// 상세 화면
 		} else if (command.equals("/cfboard/cfboard_content.fboard")) {
@@ -151,9 +161,18 @@ public class FoodController extends HttpServlet {
 		} 
 		// 등록 작업
 		else if (command.equals("/kfboard/registForm.fboard")) {
-		    request.setAttribute("food", request.getParameter("food"));
-		    service.regist(request, response);
-		    request.getRequestDispatcher("kfboard_list.fboard").forward(request, response);
+			if(request.getParameter("title").equals("") 
+					|| request.getParameter("open").equals("") 
+					|| request.getParameter("address").equals("") 
+					|| request.getParameter("writing").equals("")) {
+				response.sendRedirect("kfboard_write.fboard");
+			} else {
+				
+				
+				request.setAttribute("food", request.getParameter("food"));
+				service.regist(request, response);
+				request.getRequestDispatcher("kfboard_list.fboard").forward(request, response);
+			}
 		} 
 		// 상세 화면
 		else if (command.equals("/kfboard/kfboard_content.fboard")) {
@@ -226,10 +245,18 @@ public class FoodController extends HttpServlet {
 		 
 		 // 등록 작업 
 		 } else if (command.equals("/wfboard/registForm.fboard")) {
-		 request.setAttribute("food", request.getParameter("food"));
-		 service.regist(request, response);
-		  
-		 request.getRequestDispatcher("wfboard_list.fboard").forward(request,response);
+				if(request.getParameter("title").equals("") 
+						|| request.getParameter("open").equals("") 
+						|| request.getParameter("address").equals("") 
+						|| request.getParameter("writing").equals("")) {
+					response.sendRedirect("wfboard_write.fboard");
+				} else {
+					
+					
+					request.setAttribute("food", request.getParameter("food"));
+					service.regist(request, response);
+					request.getRequestDispatcher("wfboard_list.fboard").forward(request, response);
+				}
 		 
 		 // 상세 화면 
 		 } else if (command.equals("/wfboard/wfboard_content.fboard")) { //getContent : fno 
@@ -306,10 +333,18 @@ public class FoodController extends HttpServlet {
 
 			// 등록 작업
 		} else if (command.equals("/jfboard/registForm.fboard")) {
-			request.setAttribute("food", request.getParameter("food"));
-			service.regist(request, response);
-
-			request.getRequestDispatcher("jfboard_list.fboard").forward(request, response);
+			if(request.getParameter("title").equals("") 
+					|| request.getParameter("open").equals("") 
+					|| request.getParameter("address").equals("") 
+					|| request.getParameter("writing").equals("")) {
+				response.sendRedirect("jfboard_write.fboard");
+			} else {
+				
+				
+				request.setAttribute("food", request.getParameter("food"));
+				service.regist(request, response);
+				request.getRequestDispatcher("jfboard_list.fboard").forward(request, response);
+			}
 
 			// 상세 화면
 		} else if (command.equals("/jfboard/jfboard_content.fboard")) { // getContent : fno
