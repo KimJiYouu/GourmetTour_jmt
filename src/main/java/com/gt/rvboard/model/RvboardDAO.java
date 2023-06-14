@@ -284,4 +284,31 @@ public class RvboardDAO {
 		return list;
 	}
 	
+	public void RBDelete(String id) {
+		   
+		   String sql = "DELETE FROM RVBOARD WHERE ID = ?";
+
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+
+			try {
+
+				conn = DriverManager.getConnection(url, uid, upw);
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id) ;
+
+				pstmt.executeUpdate(); //끝.
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					conn.close();
+					pstmt.close();
+				} catch (Exception e2) {
+				}
+			}
+		   
+	   }
+	
 }

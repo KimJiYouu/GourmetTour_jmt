@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import com.gt.comments.model.CommentsDAO;
 import com.gt.comments.model.CommentsVO;
+import com.gt.food.model.FoodDAO;
 import com.gt.rvboard.model.RvboardDAO;
 import com.gt.rvboard.model.RvboardVO;
 
@@ -140,6 +141,16 @@ public class RvboardServiceImpl implements RvboardService {
 		
 		return list;
 
+	}
+
+	@Override
+	public void RBDelete(HttpServletRequest request, HttpServletResponse response) {
+		
+		String id = request.getParameter("id");
+		System.out.println(id);
+		RvboardDAO dao = RvboardDAO.getInstance();
+		dao.RBDelete(id);
+		
 	}
 
 

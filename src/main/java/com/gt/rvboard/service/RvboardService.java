@@ -22,4 +22,6 @@ public interface RvboardService {
 	void comregist(HttpServletRequest request, HttpServletResponse response); //댓등록
 	List<CommentsVO> getComList(HttpServletRequest request, HttpServletResponse response); //댓 목록
 	void deleteCom(HttpServletRequest request, HttpServletResponse response);//댓 삭제
+	void RBDelete(HttpServletRequest request, HttpServletResponse response);//유저 삭제시 삭제
+
 }

@@ -144,8 +144,16 @@ public class MemberController extends HttpServlet {
 		//회원탈퇴
 		else if(command.equals("/member/member_delete.member")) {
 			
+			RvboardService service2 = new RvboardServiceImpl();
+			service2.RBDelete(request, response);
+			
+			FoodService service3 = new FoodServiceImpl();
+			service3.FBDelete(request, response);
+
 			int result = service.deleteMember(request, response);
 			if(result == 1) {
+			
+
 			session.invalidate();
 			response.setContentType("text/html; charset=utf-8;");
 			PrintWriter out = response.getWriter();

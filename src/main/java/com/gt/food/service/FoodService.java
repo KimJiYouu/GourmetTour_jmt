@@ -16,5 +16,6 @@ public interface FoodService {
 	List<FoodVO> getSearchList(HttpServletRequest request, HttpServletResponse response); //글검색
 	void hitCount(HttpServletRequest request, HttpServletResponse response);//조회수 증가
 	List<FoodVO> getJMTList(HttpServletRequest request, HttpServletResponse response); 
+	void FBDelete(HttpServletRequest request, HttpServletResponse response);//유저 삭제시 삭제
 
 }
