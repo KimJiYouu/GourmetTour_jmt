@@ -87,6 +87,21 @@ public class RvboardServiceImpl implements RvboardService {
 			return list;
 		}
 	}
+	public List<RvboardVO> getSearch2List(HttpServletRequest request, HttpServletResponse response) {
+		List<RvboardVO> list = new ArrayList<>(); 
+		String search = request.getParameter("search");
+		RvboardDAO dao = RvboardDAO.getInstance();
+		if(!search.equals("")) {
+			for(RvboardVO v : dao.getList()) {
+				if(v.getwriting().contains(search)) {
+					list.add(v);
+				}
+			}
+			return list;
+		} else {
+			return list;
+		}
+	}
 
 	//댓 등록
 	@Override

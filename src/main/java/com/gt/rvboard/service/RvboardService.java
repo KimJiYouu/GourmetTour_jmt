@@ -16,6 +16,7 @@ public interface RvboardService {
 	void update(HttpServletRequest request, HttpServletResponse response); //글수정
 	void delete(HttpServletRequest request, HttpServletResponse response); //글삭제
 	List<RvboardVO> getSearchList(HttpServletRequest request, HttpServletResponse response); //글검색
+	List<RvboardVO> getSearch2List(HttpServletRequest request, HttpServletResponse response); //글검색
 	void hitCount(HttpServletRequest request, HttpServletResponse response);//조회수 증가
 	List<RvboardVO> getMyList(HttpServletRequest request, HttpServletResponse response); //내가 쓴 글목록
 	

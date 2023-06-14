@@ -105,12 +105,24 @@ public class FoodController extends HttpServlet {
 		}
 		// 검색기능
 		else if (command.equals("/cfboard/cfboard_search.fboard")) {
-			request.setAttribute("food", request.getParameter("food"));
-			request.setAttribute("search", request.getParameter("search"));
-			List<FoodVO> list = service.getSearchList(request, response);
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("cfboard_search.jsp").forward(request, response);
+			if(request.getParameter("choice").equals("search1")) {
+				System.out.println("제목");
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				List<FoodVO> list = service.getSearchList(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("cfboard_search.jsp").forward(request, response);
+			} else if(request.getParameter("choice").equals("search2")) {
+				System.out.println("내용");
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				
+				List<FoodVO> list = service.getSearch2List(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("cfboard_search.jsp").forward(request, response);
+			}
 		}
+	
 
 		// 조회수 증가
 		else if (command.equals("/cfboard/cfboard_hitCount.fboard")) {
@@ -171,11 +183,20 @@ public class FoodController extends HttpServlet {
 		} 
 		// 검색 기능
 		else if (command.equals("/kfboard/kfboard_search.fboard")) {
-		    request.setAttribute("food", request.getParameter("food"));
-		    request.setAttribute("search", request.getParameter("search"));
-		    List<FoodVO> list = service.getSearchList(request, response);
-		    request.setAttribute("list", list);
-		    request.getRequestDispatcher("kfboard_search.jsp").forward(request, response);
+			if(request.getParameter("choice").equals("search1")) {
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				List<FoodVO> list = service.getSearchList(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("kfboard_search.jsp").forward(request, response);
+			} else if(request.getParameter("choice").equals("search2")) {
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				
+				List<FoodVO> list = service.getSearch2List(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("kfboard_search.jsp").forward(request, response);
+			}
 		} 
 		// 조회수 증가
 		else if (command.equals("/kfboard/kfboard_hitCount.fboard")) {
@@ -240,10 +261,21 @@ public class FoodController extends HttpServlet {
 		 
 		 } // 검색기능 
 		else if (command.equals("/wfboard/wfboard_search.fboard")) {
-		 request.setAttribute("food", request.getParameter("food"));
-		 request.setAttribute("search", request.getParameter("search")); 
-		 List<FoodVO> list = service.getSearchList(request, response); request.setAttribute("list",list); 
-		 request.getRequestDispatcher("wfboard_search.jsp").forward(request,response); }
+			if(request.getParameter("choice").equals("search1")) {
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				List<FoodVO> list = service.getSearchList(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("wfboard_search.jsp").forward(request, response);
+			} else if(request.getParameter("choice").equals("search2")) {
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				
+				List<FoodVO> list = service.getSearch2List(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("wfboard_search.jsp").forward(request, response);
+			}
+		 }
 		 
 		 // 조회수 증가 
 		else if (command.equals("/wfboard/wfboard_hitCount.fboard")) {
@@ -310,19 +342,24 @@ public class FoodController extends HttpServlet {
 		}
 		// 검색기능
 		else if (command.equals("/jfboard/jfboard_search.fboard")) {
-			request.setAttribute("food", request.getParameter("food"));
-			request.setAttribute("search", request.getParameter("search"));
-			List<FoodVO> list = service.getSearchList(request, response);
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("jfboard_search.jsp").forward(request, response);
+			if(request.getParameter("choice").equals("search1")) {
+				System.out.println("제목");
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				List<FoodVO> list = service.getSearchList(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("jfboard_search.jsp").forward(request, response);
+			} else if(request.getParameter("choice").equals("search2")) {
+				System.out.println("내용");
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				
+				List<FoodVO> list = service.getSearch2List(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("jfboard_search.jsp").forward(request, response);
+			}
 		}
-		else if (command.equals("/jfboard/jfboard_search2.fboard")) {
-			request.setAttribute("food", request.getParameter("food"));
-			request.setAttribute("search", request.getParameter("search"));
-			List<FoodVO> list = service.getSearch2List(request, response);
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("jfboard_search.jsp").forward(request, response);
-		}
+	
 
 		// 조회수 증가
 		else if (command.equals("/jfboard/jfboard_hitCount.fboard")) {

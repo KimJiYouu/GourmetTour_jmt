@@ -72,7 +72,7 @@
 				<table class="table" style="width: 95%">
 
 					<tr>
-						<th style="width: 7%">댓글(${fn:length(clist)})</th>
+						<th style="width: 7%">댓글(ㅠㅜㅁ)</th>
 						<td><textarea rows="3" style="width: 140%;" name="comment"></textarea></td>
 
 						<td align="right"><input type="submit" value="댓글등록"

@@ -115,11 +115,13 @@
 							<form action="jfboard_search.fboard" class="form-inline">
 							<input type="hidden" name="food" value="일식">
 								<div class="form-group">
-									<input type="text" name="search" placeholder="제목검색"
+										<select name="choice" style="width: 70px; height: 30px; font-size: 15px;">
+							           <option value="search1" selected>제목</option>
+							           <option value="search2">내용</option>
+						            </select>
+									<input type="text" name="search" placeholder="검색어를 입력하세요"
 										class="form-control"> <input type="submit" value="검색"
 										class="btn btn-default"> 
-										
-								
 										<c:if test="${sessionScope.member_id != null }">
 										<input type="button" value="글 작성" class="btn btn-default" onclick="location.href='jfboard_write.fboard'">
 										</c:if>
@@ -127,16 +129,6 @@
 							</form>
 							
 							
-							<form action="jfboard_search2.fboard" class="form-inline">
-							<input type="hidden" name="food" value="일식">
-								<div class="form-group">
-										
-									<input type="text" name="search" placeholder="내용검색"
-										class="form-control"> <input type="submit" value="검색"
-										class="btn btn-default"  onclick="location.href='jfboard_search2.fboard'"> 
-									
-								</div>
-							</form>
 						</td>
 					</tr>
 				</tbody>

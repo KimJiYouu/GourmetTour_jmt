@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.gt.comments.model.CommentsVO;
+import com.gt.food.model.FoodVO;
 import com.gt.rvboard.model.RvboardVO;
 import com.gt.rvboard.service.RvboardService;
 import com.gt.rvboard.service.RvboardServiceImpl;
@@ -115,9 +116,21 @@ public class RvboardController extends HttpServlet {
 		}
 		// 검색기능
 		else if (command.equals("/rvboard/rvboard_search.rvboard")) {
-			List<RvboardVO> list = service.getSearchList(request, response);
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("rvboard_search.jsp").forward(request, response);
+			
+			if(request.getParameter("choice").equals("search1")) {
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				List<RvboardVO> list = service.getSearchList(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("rvboard_search.jsp").forward(request, response);
+			} else if(request.getParameter("choice").equals("search2")) {
+				request.setAttribute("food", request.getParameter("food"));
+				request.setAttribute("search", request.getParameter("search"));
+				
+				List<RvboardVO> list = service.getSearch2List(request, response);
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("rvboard_search.jsp").forward(request, response);
+			}
 		}
 
 		// 댓글기능
