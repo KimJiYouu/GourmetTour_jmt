@@ -280,13 +280,13 @@
                 <div class="col-lg-12 text-center"><h2 style="font-size: 300%; font-family: 'Nanum Pen Script'">오늘의 추천 영상</h2></div>
                
                 <div class="col-lg-4 text-center">
-                <iframe width="350" height="200" src="https://www.youtube.com/embed/qYQgpycJBk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/17fTWXbcojE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="col-lg-4 text-center">
-                <iframe width="350" height="200" src="https://www.youtube.com/embed/QM1wx1cnF30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/APWn3WRr5YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="col-lg-4 text-center">
-                <iframe width="350" height="200" src="https://www.youtube.com/embed/gmSbFfLR1c4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/2QiE0ylkiWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 </div>
                 </div>
