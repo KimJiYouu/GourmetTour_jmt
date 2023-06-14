@@ -314,4 +314,31 @@ public class FoodDAO {
 	      return list;
 
 	   }
+	   
+	   public void FBDelete(String id) {
+		   
+		   String sql = "DELETE FROM FOODBOARD WHERE ID = ?";
+
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+
+			try {
+
+				conn = DriverManager.getConnection(url, uid, upw);
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id) ;
+
+				pstmt.executeUpdate(); //끝.
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					conn.close();
+					pstmt.close();
+				} catch (Exception e2) {
+				}
+			}
+		   
+	   }
 }

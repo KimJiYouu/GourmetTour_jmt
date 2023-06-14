@@ -110,4 +110,13 @@ public class FoodServiceImpl implements FoodService{
 	      
 	      return list;
 	   }
+
+	@Override
+	public void FBDelete(HttpServletRequest request, HttpServletResponse response) {
+		
+		String id = request.getParameter("id");
+		FoodDAO dao = FoodDAO.getInstance();
+		dao.FBDelete(id);
+		
+	}
 }
